@@ -23,6 +23,16 @@ const quizData = [
         question: "Como você cria uma função em JavaScript?",
         alternatives: ["def minhaFuncao()", "function minhaFuncao()", "create minhaFuncao()", "fun minhaFuncao()", "newFunction()"],
         correct: 1
+    },
+    {
+        question: "Quais dessas tecnologias são consideradas linguagens de programação?",
+        alternatives: ["Javascript", "HTML", "CSS", "VS Code", "Bootstrap"],
+        correct: 0
+    },
+    {
+        question: "Qual o atributo do input que define o seu tipo?",
+        alternatives: ["id", "class", "type", "placeholder", "number"],
+        correct: 2
     }
 ];
 
@@ -37,4 +47,27 @@ startQuiz.addEventListener('click', function loadQuestion() {
     quizQuestions.className = 'quiz-question';
     quizQuestions.innerHTML = quizData[currentQuestion].question;
     quizContainer.appendChild(quizQuestions);
+
+    const ul = document.createElement('ul');
+    ul.className = 'quiz-alternatives';
+    quizData[currentQuestion].alternatives.forEach((alternatives, index) => {
+        const li = document.createElement('li');
+        const radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'answer';
+        radio.value = index;
+        li.appendChild(radio);
+
+        const label = document.createElement('label');
+        label.innerHTML = alternatives;
+
+        li.appendChild(label);
+        ul.appendChild(li);
+    });
+    quizContainer.appendChild(ul);
+
+    function nextQuestion() {
+        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+        
+    }
 });

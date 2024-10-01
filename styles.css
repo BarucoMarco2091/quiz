@@ -44,4 +44,5 @@ body {
     height: 5vh;
     border-radius: 3vh;
     margin-top: 3vh;
+    cursor: pointer;
 }
