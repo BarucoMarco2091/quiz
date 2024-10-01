@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --primary: #F4F0EA;
+    --green: #798252;
+    --black: #331F19;
+    --white: #CCD595;
+    --secondary: #CBBBA7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--primary);
+}
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    width: 100vh;
+    height: 50vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 10vh;
+    border-radius: 3vh;
+}
+
+#quiz-container .quiz-title {
+    font-family: 'cabin', sans-serif, serif;
+    color: var(--green);
+}
+
+#quiz-container .start-button {
+    font-family: 'cabin', sans-serif, serif;
+    color: var(--green);
+    width: 20vh;
+    height: 5vh;
+    border-radius: 3vh;
+    margin-top: 3vh;
+}
