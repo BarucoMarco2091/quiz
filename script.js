@@ -41,6 +41,7 @@ let currentQuestion = 0;
 
 const startQuiz = document.querySelector('.start-button');
 startQuiz.addEventListener('click', function loadQuestion() {
+    startQuiz.style.display = 'none';
     const quizContainer = document.getElementById('quiz-container');
     quizContainer.innerHTML = '';
     const quizQuestions = document.createElement('div');
@@ -66,8 +67,36 @@ startQuiz.addEventListener('click', function loadQuestion() {
     });
     quizContainer.appendChild(ul);
 
+    const nextButton = document.createElement('button');
+    nextButton.className = 'next-button';
+    nextButton.innerText = 'Next';
+    quizContainer.appendChild(nextButton);
+    nextButton.addEventListener('click', nextQuestion);
+
     function nextQuestion() {
         const selectedAnswer = document.querySelector('input[name="answer"]:checked');
-        
+        if (selectedAnswer) {
+            const answer = parseInt(selectedAnswer.value);
+            if (answer === quizData[currentQuestion].correct) {
+                score++;
+            }
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showScore();
+            }
+        } else {
+            alert("Por favor, selecione uma resposta.");
+        }
     }
+
+    function showScore() {
+        const quizContainer = document.getElementById('quiz-container');
+        const scoreDiv = document.getElementById('score');
+        quizContainer.style.display = 'none';
+        scoreDiv.style.display = 'block';
+        scoreDiv.innerHTML = `Você acertou ${score} de ${quizData.length} perguntas!`;
+    }
+
 });
