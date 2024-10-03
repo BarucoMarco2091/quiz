@@ -98,5 +98,4 @@ startQuiz.addEventListener('click', function loadQuestion() {
         scoreDiv.style.display = 'block';
         scoreDiv.innerHTML = `Você acertou ${score} de ${quizData.length} perguntas!`;
     }
-
 });

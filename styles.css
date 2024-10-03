@@ -46,3 +46,46 @@ body {
     margin-top: 3vh;
     cursor: pointer;
 }
+
+.quiz-question {
+    font-family: 'cabin', sans-serif, serif;
+    color: var(--green);
+    margin-bottom: 3vh;
+}
+
+.quiz-alternatives li {
+    list-style-type: none;
+    text-align: center;
+    justify-content: center;
+    font-family: 'cabin', sans-serif, serif;
+    color: var(--green);
+    margin-top: 1vh;
+}
+
+.next-button {
+    margin-top: 3vh;
+    font-family: 'cabin', sans-serif, serif;
+    color: var(--green);
+    width: 10vh;
+    height: 5vh;
+    border-radius: 1vh;
+    border: none;
+    cursor: pointer;
+}
+
+.next-button:hover {
+    background-color: var(--white);
+}
+
+#score {
+    text-align: center;
+    font-family: 'cabin', sans-serif, serif;
+    font-size: 24px;
+    margin-top: 20vh;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5vh;
+    font-family: 'cabin', sans-serif, serif;
+}
